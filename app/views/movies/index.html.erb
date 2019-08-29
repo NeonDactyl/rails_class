@@ -2,7 +2,7 @@
 <% @movies.each do |movie| %>
 <article>
   <header>
-    <h3><%= movie.name%></h3>
+    <h3><%= movie.name %></h3>
   </header>
 
   <table>
@@ -16,9 +16,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><%= truncate(movie.description, length:60, separator:' ') %></td>
+        <td><%= truncate(movie.description, length:40 , separator:' ') %></td>
         <td><%= movie.rating %></td>
-        <td><%= movie.released_on %></td>
+        <td><%= "#{movie.released_on} (#{time_ago_in_words(movie.released_on)})" %></td>
         <td><%= format_gross(movie) %></td>
       </tr>
     </tbody>

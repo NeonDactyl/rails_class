@@ -10,6 +10,10 @@ module MoviesHelper
       suffix = 'M'
       value = movie.total_gross / 1000000
     end
+
+    if movie.flop?
+      return content_tag(:strong, 'Flop!')
+    end
     value = number_to_currency(value)
     value + suffix
   end
