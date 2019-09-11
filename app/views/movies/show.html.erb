@@ -4,7 +4,7 @@
   </header>
   <div>
     <h3>Description</h3>
-    <p><%= truncate(@movie.description, length:40 , separator:' ') %></p>
+    <p><%= @movie.description %></p>
     <h3>Rating</h3>
     <p><%= @movie.rating %></p>
     <h3>Release Date</h3>
@@ -14,4 +14,5 @@
 </div>
 </article>
 
-<%=  link_to "All Movies", movies_path %>
+<%=  link_to "All Movies", movies_path %> |
+<%= link_to "Edit", edit_movie_path(@movie) %>
