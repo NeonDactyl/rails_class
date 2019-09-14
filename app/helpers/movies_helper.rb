@@ -17,4 +17,12 @@ module MoviesHelper
     value = number_to_currency(value)
     value + suffix
   end
+
+  def image_for(movie)
+    if movie.image_file_name.blank?
+      image_tag 'coming_soon.jpeg'
+    else
+      image_tag movie.image_file_name
+    end
+  end
 end

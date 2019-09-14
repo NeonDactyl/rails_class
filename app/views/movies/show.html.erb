@@ -1,5 +1,6 @@
 <article>
   <header>
+    <%= image_for(@movie) %>
     <h2><%= @movie.name %></h2>
   </header>
   <div>
@@ -11,6 +12,12 @@
     <p><%= "#{@movie.released_on} (#{time_ago_in_words(@movie.released_on)})" %></p>
     <h3>Box Office Gross</h3>
     <p><%= format_gross(@movie) %></p>
+    <h3>Cast</h3>
+    <p><%= @movie.cast %> </p>
+    <h3>Director</h3>
+    <p> <%= @movie.director %> </p>
+    <h3>Duration</h3>
+    <p> <%= @movie.duration %> </p>
 </div>
 </article>
 
